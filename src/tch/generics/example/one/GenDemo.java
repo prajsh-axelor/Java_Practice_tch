@@ -3,7 +3,10 @@ package tch.generics.example.one;
 public class GenDemo {
     public static void main(String[] args) {
         //working with Integer type
-        Gen<Integer> iOb = new Gen<Integer>(88);
+        Gen<Integer> iOb;
+        iOb = new Gen<Integer>(88); //works
+//        iOb = new Gen<>(99); //works
+//        iOb = new Gen<Double>(77); //error type double cannot be applied to int
         iOb.showType();
 
         int v = iOb.getob();
@@ -17,6 +20,8 @@ public class GenDemo {
 
         String str = strOb.getob();
         System.out.println("value : " + str);
+
+//        iOb = strOb; // throws error here itself // incomptible types
     }
 }
 
